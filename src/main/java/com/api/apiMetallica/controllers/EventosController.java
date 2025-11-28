@@ -1,6 +1,6 @@
 package com.api.apiMetallica.controllers;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,25 +9,24 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.api.apiMetallica.models.EventModel;
-import com.api.apiMetallica.services.EventService;
+import com.api.apiMetallica.models.EventosModel;
+import com.api.apiMetallica.services.EventosService;
 
 @RestController
+@RequestMapping("/eventos")
 
-@RequestMapping("/events")
-
-public class EventController {
+public class EventosController {
 
     @Autowired
-    private EventService eventService;
+    private EventosService eventService;
 
     @GetMapping
-    public ArrayList<EventModel> getEvents(){
+    public List<EventosModel> getEvents() {
         return eventService.getEvents();
     }
 
     @GetMapping(path = "/{id}")
-     public Optional<EventModel> getEventById(@PathVariable("id") Long id) {
+    public Optional<EventosModel> getEventById(@PathVariable("id") Long id) {
         return this.eventService.getEventById(id);
 
     }

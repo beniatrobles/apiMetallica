@@ -10,9 +10,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Event")
+@Table(name = "eventos")
 
-public class EventModel {
+public class EventosModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,12 +38,9 @@ public class EventModel {
 
     @Column
     private String posterPath;
-   
+
     @Column(nullable = false)
     private Integer capacidad;
-
-   
-    
 
     public Long getId() {
         return id;
@@ -109,13 +106,12 @@ public class EventModel {
         this.posterPath = posterPath;
     }
 
-     public Integer getCapacidad() {
+    public Integer getCapacidad() {
         return capacidad;
     }
 
     public void setCapacidad(Integer capacidad) {
         this.capacidad = capacidad;
     }
-
 
 }
