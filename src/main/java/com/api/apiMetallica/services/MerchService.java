@@ -1,6 +1,7 @@
 package com.api.apiMetallica.services;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,11 @@ public class MerchService {
 
     public Optional<MerchModel> getMerchById(Long id){
         return merchRepository.findById(id);
+    }
+
+
+    public List<MerchModel> getTop5Merch() {
+        return merchRepository.findTop5Merch();
     }
 
 

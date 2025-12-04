@@ -26,6 +26,9 @@ public class NewModel {
     private LocalDate fechaPublicacion;
 
     @Column
+    private String imagenPath;
+
+    @Column
     private String etiqueta; // tour album merch...
 
     public Long getId() {
@@ -66,6 +69,14 @@ public class NewModel {
 
     public void setEtiqueta(String etiqueta) {
         this.etiqueta = etiqueta;
+    }
+
+    public String getImagenPath() {
+        return imagenPath;
+    }
+
+    public void setImagenPath(String imagenPath) {
+        this.imagenPath = imagenPath;
     }
 
     

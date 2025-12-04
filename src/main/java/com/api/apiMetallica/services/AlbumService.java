@@ -1,6 +1,7 @@
 package com.api.apiMetallica.services;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,10 @@ public class AlbumService {
     public Optional<AlbumModel> getAlbumById(Long id){
         return albumRepository.findById(id);
     }
+
+    public List<AlbumModel> getRandom3Albums() {
+    return albumRepository.findRandom3();
+}
 
     
 

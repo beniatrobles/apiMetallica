@@ -1,6 +1,7 @@
 package com.api.apiMetallica.controllers;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,11 @@ public class MerchController {
      @GetMapping(path = "/{id}")
      public Optional<MerchModel> getMerchById(@PathVariable("id") Long id){
         return this.merchService.getMerchById(id);
+    }
+
+    @GetMapping("/top5")
+    public List<MerchModel> getTop5Merch() {
+        return merchService.getTop5Merch();
     }
 
 }
