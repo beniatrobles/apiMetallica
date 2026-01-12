@@ -36,4 +36,9 @@ public class MerchController {
         return merchService.getTop5Merch();
     }
 
+    @GetMapping("/categorias")
+    public List<String> findDistinctCategories() {
+        return merchService.findDistinctCategories();
+    }
+
 }

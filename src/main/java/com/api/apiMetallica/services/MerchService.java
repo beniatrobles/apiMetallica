@@ -35,5 +35,9 @@ public class MerchService {
         return merchRepository.findTop5Merch();
     }
 
+    public List<String> findDistinctCategories() {
+        return merchRepository.findDistinctCategories();
+    }
+
 
 }

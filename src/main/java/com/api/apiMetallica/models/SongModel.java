@@ -25,6 +25,9 @@ public class SongModel {
     @Column(columnDefinition = "TEXT")
     private String letra;
 
+    @Column
+    private String enlaceCancion;
+
 
     @ManyToOne
     @JoinColumn(name = "album_id")   // clave foránea
@@ -35,6 +38,14 @@ public class SongModel {
      // Getters
     public Long getId() {
         return id;
+    }
+
+    public String getEnlaceCancion() {
+        return enlaceCancion;
+    }
+
+    public void setEnlaceCancion(String enlaceCancion) {
+        this.enlaceCancion = enlaceCancion;
     }
 
     public String getTitulo() {
